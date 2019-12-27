@@ -24,6 +24,12 @@ You can change it to whatever you want by adding the following snippet to your K
 }
 ```
 
+## Installation
+
+This plugin is not available on package control yet as [my PR](https://github.com/wbond/package_control_channel/pull/7790) is waiting for review.
+
+You can install it by cloning this repo in your `Packages` directory.
+
 ## How it works
 
 ```

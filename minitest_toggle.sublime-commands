@@ -1,6 +1,6 @@
 [
   {
-    "caption": "Minitest Toggle: toggle test/implementation file",
+    "caption": "Minitest Buddy: toggle test/implementation file",
     "command": "minitest_toggle"
   }
 ]
