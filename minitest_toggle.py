@@ -8,12 +8,23 @@ class MinitestToggleCommand(sublime_plugin.WindowCommand):
 
   def search_files(self, directory='.', filename=''):
     results = []
-    for dirpath, dirnames, files in os.walk(directory):
-        for name in files:
-            if name.lower() == filename.lower():
-              results.append(os.path.join(dirpath, name))
 
-    return results
+    for dirpath, dirnames, files in os.walk(directory):
+      for name in files:
+        if name.lower() == filename.lower():
+          # tries to find the best match by calculating a rank
+          file_list = os.path.join(dirpath, name).replace("%s/" % directory, "").split(os.path.sep)
+          search_list = self.relative_path_list[:-1] + [filename]
+          rank = len(set(search_list) & set(file_list))
+
+          results.append(
+            { 'path': os.path.join(dirpath, name), 'rank': rank }
+          )
+
+    # greater rank values will appear first on the list
+    sorted_results = sorted(results, key = lambda i: i['rank'], reverse = True)
+
+    return [item['path'] for item in sorted_results]
 
   def list_options(self, options, no_options_message):
     if len(options) == 1:
@@ -61,6 +72,7 @@ class MinitestToggleCommand(sublime_plugin.WindowCommand):
       return
 
     current_file_basename = os.path.basename(self.window.active_view().file_name())
+    self.relative_path_list = current_file.replace("%s/" % current_folder, "").split(os.path.sep)
 
     if current_file_basename.startswith('test_'):
       self.toggle_implementation_file(current_file_basename, current_folder)
