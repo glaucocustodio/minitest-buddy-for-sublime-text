@@ -26,9 +26,15 @@ You can change it to whatever you want by adding the following snippet to your K
 
 ## Installation
 
-This plugin is not available on package control yet as [my PR](https://github.com/wbond/package_control_channel/pull/7790) is waiting for review.
+### Package Control
 
-You can install it by cloning this repo in your `Packages` directory.
+1. Open the Command Palette (<kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd>) and choose “*Install Package*”
+2. Select “*Minitest Buddy*”” and press <kbd>Enter</kbd>
+
+### Using Git
+
+1. Change to your Sublime Text `Packages` directory
+2. Clone repository `git clone https://github.com/glaucocustodio/minitest-buddy-for-sublime-text.git 'Minitest Buddy'`
 
 ## How it works
 
