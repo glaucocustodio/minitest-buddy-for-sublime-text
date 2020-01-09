@@ -24,12 +24,14 @@ You can change it to whatever you want by adding the following snippet to your K
 }
 ```
 
+Ps: `super` is <kbd>command</kbd> on mac
+
 ## Installation
 
 ### Package Control
 
 1. Open the Command Palette (<kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd>) and choose “*Install Package*”
-2. Select “*Minitest Buddy*”” and press <kbd>Enter</kbd>
+2. Select “*Minitest Buddy*” and press <kbd>Enter</kbd>
 
 ### Using Git
 
